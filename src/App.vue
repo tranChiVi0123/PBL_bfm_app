@@ -1,12 +1,27 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <notifications group="top-alert" />
+    <div id="nav" v-if="!status.loggedIn">
+      <router-link to="/login">Login</router-link> |
+      <router-link to="/register">Register</router-link>
     </div>
-    <router-view/>
+    <div id="nav" v-else>
+      <v-btn v-on:click="logout">Logout</v-btn>
+    </div>
+    <router-view />
   </div>
 </template>
+
+<script>
+import { mapState, mapActions } from "vuex";
+export default {
+  computed: mapState(["status"]),
+  methods: {
+    ...mapActions(["logout"]),
+  },
+};
+</script>
+
 
 <style lang="scss">
 #app {
