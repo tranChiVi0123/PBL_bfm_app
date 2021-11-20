@@ -10,6 +10,7 @@
       <Footer />
     </template>
     <template v-else>
+      <notifications group="top-alert" />
       <transition>
         <keep-alive>
           <div id="nav">

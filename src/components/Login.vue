@@ -80,8 +80,8 @@ export default {
             type: status ? "success" : "warn",
             position: "top",
             title: message,
-            duration: 10000,
-            speed: 1000,
+            duration: 2000,
+            speed: 100,
           });
           this.loading = false;
           if (status) this.$router.push({ path: "/" });
@@ -94,8 +94,8 @@ export default {
             type: status ? "success" : "warn",
             position: "top",
             title: message,
-            duration: 10000,
-            speed: 1000,
+            duration: 2000,
+            speed: 100,
           });
           this.loading = false;
         }
