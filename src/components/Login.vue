@@ -71,7 +71,7 @@ export default {
       this.loading = true;
       var status = true;
       var message = "";
-      this.$store.dispatch("login", this.user).then(
+      this.$store.dispatch("auth/login", this.user).then(
         (res) => {
           status = res.token ? true : false;
           message = status ? "Successfully" : res.errors;

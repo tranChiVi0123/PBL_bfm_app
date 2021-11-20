@@ -4,6 +4,7 @@
       <notifications group="top-alert" />
       <toolbar />
       <v-main>
+        <breadcrumbs/>
         <router-view></router-view>
       </v-main>
       <Footer />
@@ -23,12 +24,7 @@
 </template>
 
 <script>
-import { mapState, mapActions } from "vuex";
-
 export default {
-  computed: mapState(["status"]),
-  methods: {
-    ...mapActions(["logout"]),
-  },
+  name: "App"
 };
 </script>

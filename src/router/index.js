@@ -14,6 +14,11 @@ const routes = [
     component: Home,
     meta: {
       allowAnonymous: false,
+      breadcrumbs: [
+        { text: "Home", href: "/", disabled: false },
+        { text: "Link 1", href: "/about", disabled: false },
+        { text: "Link 2", disabled: true },
+      ],
     },
   },
   {
@@ -21,6 +26,11 @@ const routes = [
     name: "About",
     meta: {
       allowAnonymous: false,
+      breadcrumbs: [
+        { text: "About", href: "/about", disable: false},
+        { text: "Link 1", href: "/", disabled: false },
+        { text: "Link 2", disabled: true },
+      ],
     },
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
