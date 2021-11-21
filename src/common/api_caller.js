@@ -2,8 +2,8 @@ import axios from "axios";
 import config from "./config";
 import headerHelper from "./header_helper";
 
-const apiCaller = (endpoint, method = "GET", body) => {
-  return axios({
+const apiCaller =  async (endpoint, method = "GET", body) => {
+  return await axios({
     method: method,
     url: `${config.API_URL}${endpoint}`,
     data: body,

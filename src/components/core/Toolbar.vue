@@ -7,8 +7,8 @@
         @click="drawer = !drawer"
       ></v-app-bar-nav-icon>
       <v-toolbar-title class="grey--text">
-        <span class="font-weight-light">Site</span>
-        <span>Title</span>
+        <span class="font-weight-light">Money</span>
+        <span>Forward</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
 
@@ -17,20 +17,20 @@
         <template v-slot:activator="{ on }">
           <!-- <v-btn text slot="activator"> -->
           <v-btn text v-on="on">
-            <v-icon left>expand_more</v-icon>
-            <span>Menu</span>
+            <v-icon middle>mdi-bell-badge-outline</v-icon>
           </v-btn>
         </template>
         <v-list>
           <!-- v-list-tile is changed to v-list-item -->
-          <v-list-item
+          <!-- <v-list-item
             v-for="link in links"
             :key="link.text"
             router
             :to="link.route"
           >
             <v-list-item-title>{{ link.text }}</v-list-item-title>
-          </v-list-item>
+          </v-list-item> -->
+          Notifications
         </v-list>
       </v-menu>
 
@@ -71,6 +71,7 @@ export default {
     drawer: false,
     links: [
       { icon: "home", text: "Home", route: "/" },
+      { icon: "add_link", text: "Aggregation", route: "/aggregation" },
       { icon: "contacts", text: "About", route: "/about" },
     ],
   }),

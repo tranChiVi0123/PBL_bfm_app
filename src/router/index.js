@@ -4,6 +4,7 @@ import Home from "../views/Home";
 import Login from "../components/Login";
 import Register from "../components/Register";
 import Error from "../views/Error.vue";
+import Aggregation from "../views/Aggregation";
 
 Vue.use(VueRouter);
 
@@ -15,9 +16,18 @@ const routes = [
     meta: {
       allowAnonymous: false,
       breadcrumbs: [
-        { text: "Home", href: "/", disabled: false },
-        { text: "Link 1", href: "/about", disabled: false },
-        { text: "Link 2", disabled: true },
+        { text: "Home", href: "/", disabled: false }
+      ],
+    },
+  },
+  {
+    path: "/aggregation",
+    name: "Aggregation",
+    component: Aggregation,
+    meta: {
+      allowAnonymous: false,
+      breadcrumbs: [
+        { text: "Aggregation", href: "/aggregation", disabled: false }
       ],
     },
   },
@@ -27,9 +37,7 @@ const routes = [
     meta: {
       allowAnonymous: false,
       breadcrumbs: [
-        { text: "About", href: "/about", disable: false},
-        { text: "Link 1", href: "/", disabled: false },
-        { text: "Link 2", disabled: true },
+        { text: "About", href: "/about", disable: false}
       ],
     },
     // route level code-splitting

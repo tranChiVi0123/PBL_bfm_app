@@ -1,19 +1,19 @@
 import AccountsService from "../services/accounts";
-import {AGGREGATE_SUCCESS, AGGREGATE_FAILURE} from "./type"
+import { AGGREGATE_SUCCESS, AGGREGATE_FAILURE } from "./type";
 
-const initialState = { aggre_account_id: "" };
+const initialState = { otp: "" };
 
 export const aggregation = {
-  namespaced: true,
+  // namespaced: true,
   state: initialState,
   getters: {
-    aggre_account_id: (state) => state.aggre_account_id,
+    otp: (state) => state.otp,
   },
   actions: {
-    aggregate({ commit }, aggre_account_id) {
-      return AccountsService.aggregating(aggre_account_id).then(
+    aggregate({ commit }, otp) {
+       return AccountsService.aggregating(otp).then(
         (res) => {
-          commit(AGGREGATE_SUCCESS, res);
+          commit(AGGREGATE_SUCCESS, otp);
           return Promise.resolve(res);
         },
         (error) => {
@@ -24,11 +24,11 @@ export const aggregation = {
     },
   },
   mutations: {
-    [AGGREGATE_SUCCESS](state, aggre_account_id) {
-      state.aggre_account_id = aggre_account_id;
+    [AGGREGATE_SUCCESS](state, otp) {
+      state.otp = otp;
     },
-    [AGGREGATE_FAILURE](state){
-      state.aggre_account_id = null;
-    }
+    [AGGREGATE_FAILURE](state) {
+      state.otp = null;
+    },
   },
 };

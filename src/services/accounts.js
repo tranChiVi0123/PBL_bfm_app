@@ -1,15 +1,18 @@
 import apiCaller from "../common/api_caller";
 
 class AccountsService {
-  async aggregating(id) {
+  aggregating = async (otp) => {
     const res = await apiCaller("accounts/aggregations", "POST", {
-      aggre_account_id: id
+      oauth: {
+        otp,
+      },
     });
-    if (res.data) {
-      console.log(res.data)
-    }
-    console.log(res.data);
-    return res.data;
-  }
+    return res;
+  };
+
+  fetch_accounts = async () => {
+    const res = await apiCaller("accounts", "GET", {});
+    return res;
+  };
 }
 export default new AccountsService();
