@@ -72,6 +72,7 @@ export default {
     links: [
       { icon: "home", text: "Home", route: "/" },
       { icon: "add_link", text: "Aggregation", route: "/aggregation" },
+      { icon: "account_balance", text: "Transactions", route: "/transactions" },
       { icon: "contacts", text: "About", route: "/about" },
     ],
   }),

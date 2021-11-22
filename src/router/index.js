@@ -5,6 +5,7 @@ import Login from "../components/Login";
 import Register from "../components/Register";
 import Error from "../views/Error.vue";
 import Aggregation from "../views/Aggregation";
+import Transactions from "../views/Transactions"
 
 Vue.use(VueRouter);
 
@@ -28,6 +29,17 @@ const routes = [
       allowAnonymous: false,
       breadcrumbs: [
         { text: "Aggregation", href: "/aggregation", disabled: false }
+      ],
+    },
+  },
+  {
+    path: "/transactions",
+    name: "Transactions",
+    component: Transactions,
+    meta: {
+      allowAnonymous: false,
+      breadcrumbs: [
+        { text: "Transactions", href: "/transactions", disabled: false }
       ],
     },
   },
