@@ -20,8 +20,8 @@ class AuthService {
     router.push({path: "login", params: {}})
   }
 
-  register(user) {
-    return apiCaller("users/", "POST", {
+  async register(user) {
+    return await apiCaller("users", "POST", {
       user: {
         email: user.email,
         password: user.password,
