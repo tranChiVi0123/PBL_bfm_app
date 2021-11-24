@@ -1,0 +1,52 @@
+<template name="card">
+  <v-card :loading="loading" class="mx-auto my-12" max-width="374">
+    <template slot="progress">
+      <v-progress-linear
+        color="deep-purple"
+        height="10"
+        indeterminate
+      ></v-progress-linear>
+    </template>
+    <v-card-title>{{ account.disp_name }}</v-card-title>
+    <v-card-text>
+      <v-row align="center" class="mx-0">
+        <div class="grey--text ms-4">{{ sub_account.sub_name }}</div>
+        <div class="grey--text ms-4">¥ • {{ sub_account.asset_sum }}</div>
+      </v-row>
+    </v-card-text>
+    <v-divider class="mx-4"></v-divider>
+    <v-card-title>Transactions</v-card-title>
+    <v-card-text>
+      <v-divider class="mx-4"></v-divider>
+      transaction 1
+      <v-divider class="mx-4"></v-divider>
+      transaction 2
+      <v-divider class="mx-4"></v-divider>
+      transaction 3
+    </v-card-text>
+    <v-card-actions>
+      <v-btn color="deep-purple lighten-2" text @click="reserve">
+        Refresh
+      </v-btn>
+    </v-card-actions>
+  </v-card>
+</template>
+
+<script>
+export default{
+  props: ['account', 'sub_account'],
+  data(){
+    return {
+      loading: false,
+      selection: 1,
+    }
+  },
+  methods: {
+    reserve() {
+      this.loading = true;
+
+      setTimeout(() => (this.loading = false), 2000);
+    }
+  }
+}
+</script>
