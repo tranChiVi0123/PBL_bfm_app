@@ -16,14 +16,13 @@
     </v-card-text>
     <v-divider class="mx-4"></v-divider>
     <v-card-title>Transactions</v-card-title>
-    <v-card-text>
+    <div v-for="trans in transactions.slice(0,3)" :key="trans.transaction.id_hash">
+      <v-card-text>
       <v-divider class="mx-4"></v-divider>
-      transaction 1
-      <v-divider class="mx-4"></v-divider>
-      transaction 2
-      <v-divider class="mx-4"></v-divider>
-      transaction 3
+      {{trans.transaction.content}}
     </v-card-text>
+    </div>
+    ...
     <v-card-actions>
       <v-btn color="deep-purple lighten-2" text @click="reserve">
         Refresh
@@ -33,20 +32,26 @@
 </template>
 
 <script>
-export default{
-  props: ['account', 'sub_account'],
-  data(){
+// import { mapGetters } from "vuex";
+
+export default {
+  props: ["account", "sub_account", "transactions"],
+  data() {
     return {
       loading: false,
       selection: 1,
-    }
+      // transactions:[]
+    };
   },
   methods: {
     reserve() {
       this.loading = true;
-
-      setTimeout(() => (this.loading = false), 2000);
+      // this.transactions(this.sub_account.id_hash);
+      setTimeout(() => this.loading = false, 2000);
     }
-  }
-}
+  },
+  // mounted() {
+  //   this.reserve()
+  // },
+};
 </script>

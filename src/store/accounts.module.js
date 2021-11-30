@@ -22,11 +22,11 @@ export const accounts = {
     },
   },
   mutations: {
-    [FETCH_ACCOUNTS_SUCCESS](state, otp) {
-      state.otp = otp;
+    [FETCH_ACCOUNTS_SUCCESS](state, accounts) {
+      state.aggre_accounts = accounts;
     },
     [FETCH_ACCOUNTS_FAILURE](state) {
-      state.otp = null;
+      state.aggre_accounts = null;
     },
   },
 };
