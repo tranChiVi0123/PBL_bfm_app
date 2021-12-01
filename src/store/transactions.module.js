@@ -10,9 +10,27 @@ export const transactions = {
         (trans) => trans.transaction.hashed_sub_account_id === sub_account_id
       );
     },
-    seachTransaction: (state) => (keyword) => {
+    formatTransactions: (state) => {
+      var result = [];
+      state.transactions.forEach((trans) => {
+        result.push({
+          id_hash: trans.transaction.id_hash,
+          content: trans.transaction.content,
+          is_transfer: trans.transaction.is_transfer.toString(),
+          is_income: trans.transaction.is_income.toString(),
+          amount: trans.transaction.amount,
+          currency: trans.transaction.currency,
+          is_target: trans.transaction.is_target.toString(),
+          updated_at: trans.transaction.updated_at.toString(),
+        });
+      });
+      return result;
+    },
+    seachTransactions: (state) => (keyword) => {
       return state.transactions.filter(
-        (trans) => trans.transaction === keyword
+        (trans) =>
+          trans.transaction.content.includes(keyword) ||
+          trans.transaction.amount.includes(keyword)
       );
     },
   },
