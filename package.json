@@ -6,21 +6,20 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --modern",
     "lint": "vue-cli-service lint",
-    "start": "yarn build && node server.js"
+    "start": "node server.js"
   },
   "dependencies": {
     "axios": "^0.24.0",
     "core-js": "^3.6.5",
+    "express": "^4.17.1",
+    "serve-static": "^1.14.1",
     "vee-validate": "^3.4.14",
     "vue": "^2.6.11",
     "vue-notification": "^1.3.20",
     "vue-router": "^3.2.0",
     "vue-spinner": "^1.0.4",
     "vuetify": "^2.4.0",
-    "vuex": "^3.6.2",
-    "express": "3.0.6",
-    "jade": "*",
-    "socket.io" : "*"
+    "vuex": "^3.6.2"
   },
   "devDependencies": {
     "@mdi/font": "^6.4.95",
