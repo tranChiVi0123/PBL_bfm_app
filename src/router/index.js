@@ -4,7 +4,7 @@ import Home from "../views/Home";
 import Login from "../components/Login";
 import Register from "../components/Register";
 import Error from "../views/Error.vue";
-import Aggregation from "../views/Aggregation";
+import Aggregation from "../views/Aggregation.vue";
 import Transactions from "../views/Transactions"
 
 Vue.use(VueRouter);

@@ -9,6 +9,7 @@
     "start": "node server.js"
   },
   "dependencies": {
+    "@bachdgvn/vue-otp-input": "^1.0.8",
     "axios": "^0.24.0",
     "core-js": "^3.6.5",
     "express": "^4.17.1",
