@@ -16,11 +16,23 @@
     </v-card-text>
     <v-divider class="mx-4"></v-divider>
     <v-card-title>Transactions</v-card-title>
-    <div v-for="trans in transactions.slice(0,3)" :key="trans.transaction.id_hash">
-      <v-card-text>
+    <div
+      v-for="trans in transactions.slice(0, 3)"
+      :key="trans.transaction.id_hash"
+    >
       <v-divider class="mx-4"></v-divider>
-      {{trans.transaction.content}}
-    </v-card-text>
+      <v-row>
+        <v-col md="8">
+          <v-card-text style="text-align: left">
+          {{ trans.transaction.content }}
+        </v-card-text>
+        </v-col>
+        <v-col md="4">
+          <span style="color: orange; text-align: right">
+            <i> {{ trans.transaction.currency + trans.transaction.amount }} </i>
+          </span>
+        </v-col>
+      </v-row>
     </div>
     ...
     <v-card-actions>
@@ -47,8 +59,8 @@ export default {
     reserve() {
       this.loading = true;
       // this.transactions(this.sub_account.id_hash);
-      setTimeout(() => this.loading = false, 2000);
-    }
+      setTimeout(() => (this.loading = false), 2000);
+    },
   },
   // mounted() {
   //   this.reserve()
